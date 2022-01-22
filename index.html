@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esteveztranfers2022 – Pagina de Viajes en los Cabos</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./bootstraps.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./bootstrap.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>-->
+    
+    <!-- cambiar url del src-->
+    <script src="https://www.paypal.com/sdk/js?client-id=AUEic2q5ilECFC9u9hOLzbizqlGFbI6bwGtAG5SKWHTBgTEP4OfxAliCL9mGI_DtHIJeoys_Fg6P1Q68"></script>
+    <!-- <script src="https://www.paypal.com/sdk/js?client-id=&components=buttons"></script> -->
+
+
+</head>
+<body>
+    <header class="header d-flex align-items-center justify-content-evenly mb-5 p-2">
+        <img src="./imagen/logo.png" alt="logo de Esteveztranfers2022">
+        <nav class="navbar">
+            <div class="navbar__barra"></div>
+            <ul class="nav justify-content-center align-items-center">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/about">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contacto</a>
+                  </li>
+            </ul>
+        </nav>
+    </header>
+    <main id="carouselExampleIndicators" class="main carousel slide my-5 px-2" data-bs-ride="carousel">
+        
+        <div class="main__imagenes--carrusel carousel-inner">
+            <img class="carousel-item active" src="./imagen/carrusel-1.jpg" alt="imagen de estevez Transfers">
+            <img class="carousel-item" src="./imagen/carrusel-2.jpg" alt="imagen de estevez Transfers">
+            <img class="carousel-item" src="./imagen/carrusel-3.jpg" alt="imagen de estevez Transfers">
+            <img class="carousel-item" src="./imagen/carrusel-4.jpg" alt="imagen de estevez Transfers">
+            <img class="carousel-item" src="./imagen/carrusel-5.jpg" alt="imagen de estevez Transfers">
+        </div>
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </main>
+    <div class="reservacion" id="reserva">
+        <div class="container d-flex justify-content-center flex-column align-content-center my-2 p-3">
+            <h2>Book Here <i class="fas fa-calendar-alt"></i></h2>
+        <div class="reservaciones-1">
+            <h3 class="mt-3" id="pasoID">Step 1/5</h3>
+            <div class="reservaciones">
+                <form class="reservacion__paginado active">
+                    <div class="reservar__from">
+                        <div class="reservar__from__ida">
+                            <input type="radio" name="from_air" id="from__airIda" checked="true">
+                            <label for="from__airIda" class="reserva_From_ID active">From Airport(SJD) to Resort</label>
+                        </div>
+                        <div class="reserva__from__vuelta">
+                            <input type="radio" name="from_air" id="from__air_Vuelta">
+                            <label for="from__air_Vuelta" class="reserva_From_ID">From Resort to Airport(SJD)</label>
+                        </div>
+                    </div>
+                    <div class="reservar_idaVuelta">
+                        <div class="reserva__idaVuelta_soloIda">
+                            <input type="radio" name="idavuelta" id="soloIda" checked="true">
+                            <label for="soloIda" class="reserva_ID active">One Way</label>
+                        </div>
+                        <div class="reserva__idaVuelta__idaMasVuelta">
+                            <input type="radio" name="idavuelta" id="idaMasVuelta">
+                            <label for="idaMasVuelta" class="reserva_ID">Round Trip</label>
+                        </div>
+                    </div>
+                </form>
+                <form class="reservacion__paginado">
+                    <label for="zonaDeViaje">Zone:</label>
+                    <select name="zone" id="zonaDeViaje" onchange="cambiarZona()">
+                        <option value="1" selected="selected">--- Zona 1 ---</option>
+                        <option value="2">--- Zona 2 ---</option>
+                        <option value="3">--- Zona 3 ---</option>
+                        <option value="4">--- Zona 4 ---</option>
+                    </select>
+                    <label for="zonaDeViaje">Resort:</label>
+                    <select name="resort" id="direccionDeViaje" onchange="cambiarResort()">
+                        <option value="" disabled="disabled" selected="selected">--- Direction ---</option>
+                    </select>
+                    <label for="passengers">Passengers:</label>
+                    <select name="passengers" id="passengers">
+                        <option value="1" selected="selected">--- 1 ---</option>
+                        <option value="2">--- 2 ---</option>
+                        <option value="3">--- 3 ---</option>
+                        <option value="4">--- 4 ---</option>
+                        <option value="5">--- 5 ---</option>
+                        <option value="6">--- 6 ---</option>
+                    </select>  
+                    <h3>Amount USD</h3>
+                    <h4 class="text-warning amountAll"></h4>
+                    <p class="text-dark">Price per Private</p>
+                </form>
+                <form class="reservacion__paginado">
+                    <label for="nombre">Name</label>
+                    <input type="text" id="nombre" placeholder="ej: Falipe Miranda Acuña">
+                    <label for="Email" >Email</label>
+                    <input type="email" id="email" placeholder="ej: nombre@email.com">
+                    <label for="numero">Phone Number</label>
+                    <input type="text" placeholder="ej: 1234567890" id="numero">
+                </form>
+                <form class="reservacion__paginado">
+                    <h4></h4>
+                    <label for="arrivalAirlineName">Arrival Airline Name</label>
+                    <input type="text" id="arrivalAirlineName" placeholder="">
+                    <label for="arrivalFlightNumber" >Arrival Flight Number</label>
+                    <input type="text" id="arrivalFlightNumber" placeholder="">
+                    <label for="fecha_reserva">Arrival Data</label>
+                    <input type="date" id="fecha_reserva" name="fecha_reserva">
+                    <label for="time_reserva">Arrival Time</label>
+                    <input type="text" id="time_reserva" placeholder="ej: 12:45PM">
+                </form>
+                <form class="reservacion__paginado">
+                    <h3>Payment methods</h3>
+                    <p class="text-success"></p>
+                    <h3>Total Amount USD</h3>
+                    <h4 class="text-warning amountAll-1"></h4>
+                    <button class="btn btn-dark p-2 fs-5 rounded-pill btnPagoEfectivo">Pay on Arrival (CASH ONLY)</button>
+                    <div id="paypal__pago"></div>
+                </form>
+            </div>
+            <div class="reservacion__botones d-flex justify-content-center gap-4">
+                <button class="btn btn-danger reservacion__botones__back btnActive" onclick="cambioDeNumeroA_UN_Menos()">Back</button>
+                <button class="btn btn-dark reservacion__botones__next btnActive active" onclick="cambioDeNumeroA_UN_Mas()">Next</button>
+            </div>
+        </div>
+        </div>
+        
+    </div>
+
+    <div class="about">
+        <div class="about__title">
+            <h2>ESTEVEZ TRANSFERS</h2>
+            <p class="about__title--first"><span>ESTEVEZ TRANSFERS</span> comprometidos con la calidad en el servicio de transporte en Los Cabos, contamos con unidades equipadas, cómodas y listas para cualquier servicio de transporte</p>
+            <p>Los chóferes bilingües de  ESTEVEZ TRANSFERS reciben capacitación periódica sobre lo que nuestros clientes esperan, y nos enorgullece decir que son insuperables en la prestación de un servicio de primera clase. El servicio al cliente superior es lo que nos ha distinguido de las otras empresas de transporte de la zona. Los empleados y conductores de ESTEVEZ TRANSFERS están orgullosos de la Garantía de servicio del 100 % que han brindado a cientos de pasajeros a lo largo de los años.</p>
+        </div>
+        <div class="about__cards">
+            <div class="about__cards--card">
+                <img src="./imagen/grid-1.jpg" alt="San José de los cabos">
+                <h3>San José de los cabos</h3>
+            </div>
+            <div class="about__cards--card">
+                <img src="./imagen/grid-2.jpg" alt="cabo san lucas">
+                <h3>Cabo San Lucas</h3>
+            </div>
+            <div class="about__cards--card">
+                <img src="./imagen/grid-3.jpg" alt="Todos Santos">
+                <h3>Todos Santos</h3>
+            </div>
+            <div class="about__cards--card">
+                <img src="./imagen/grid-4.jpg" alt="La Paz">
+                <h3>La Paz</h3>
+            </div>
+            <div class="about__cards--card">
+                <img src="./imagen/grid-5.jpg" alt="Loreto">
+                <h3>Loreto</h3>
+            </div>
+            <div class="about__cards--card">
+                <img src="./imagen/grid-6.jpg" alt="Cerritos Beach">
+                <h3>Cerritos Beach</h3>
+            </div>
+        </div>
+        <div class="about__boton mt-3">
+            <a class="btn btn__reservacion" href="#reserva">RESERVACION</a>
+        </div>
+    </div>
+    <div class="index">
+        <div class="index__div">
+            <a href="#" class="btn btn-danger">
+                MORE INFORMATION
+            </a>
+        </div>
+    </div>
+    <div class="team">
+        <h2>OUR QUALIFIED<span>TEAM<span></h2>
+        <div class="team__cards">
+            <div class="team__card">
+                <img src="./imagen/team-1.jpg" alt="Gerente de Operaciones">
+                <div>
+                    <h3>Ezequiel  Lara</h3>
+                    <p>Gerente de Operaciones</p>
+                </div>
+            </div>
+            <div class="team__card center">
+                <img src="./imagen/team-2.jpg" alt="Gerente General">
+                <div class="strong">
+                    <h3>Hector Estevez</h3>
+                    <p>Gerente General</p>
+                </div>
+            </div>
+            <div class="team__card">
+                <img src="./imagen/team-3.jpg" alt="Chofer en jefe">
+                <div>
+                    <h3>Pedro Vazquez</h3>
+                    <p>Chofer en jefe</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__link">
+            <h2><a href="/">Esteveztranfers2022</a></h2>
+            <div>
+                <a href="https://www.paypal.com/paypalme/LosCabosTransp"><img src="./imagen/paypal.png" alt="LosCabosTransp"></a>
+                <a href="https://www.tripadvisor.com.mx/Attraction_Review-g152515-d23731126-Reviews-Estevez_Transfers-Cabo_San_Lucas_Los_Cabos_Baja_California.html"><img src="./imagen/tripadvisors.png" alt="LosCabosTransp"></a>
+            </div>
+        </div>
+        <div class="footer__contact">
+            <h3>contact with us</h3>
+            <p><i class="fas fa-map-marked-alt"></i> Colina Valvanera M9 L5 Colinas de San José San José del Cabo, B.C.S. C.P. 23444 </p>
+            <p><i class="fas fa-envelope"></i> ferrerleonardo.m@gmail.com</p>
+            <p><i class="fas fa-phone"></i> 6241570688</p>
+            <a class="editfacebook" href="https://www.facebook.com/Estevez-Transfers-101205051652929/"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+    <script src="./main.js"></script>
+    <script src="./send.js"></script>
+</body>
+</html>
